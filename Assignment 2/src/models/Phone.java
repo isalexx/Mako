@@ -27,7 +27,6 @@ public class Phone extends Device
 
     /**
      * This is the get method for the size of the screen in inches.
-     *
      */
 
     public double getScreenSizeInch()
@@ -37,7 +36,6 @@ public class Phone extends Device
 
     /**
      * This is the set method for the size of the screen in inches. It only takes in values between 1 and 100 inches.
-     *
      */
 
     public void setScreenSizeInch(double screenSizeInch)
@@ -50,7 +48,6 @@ public class Phone extends Device
 
     /**
      * This is the get method for Camera megapixels value..
-     *
      */
 
     public int getCameraMp()
@@ -60,7 +57,6 @@ public class Phone extends Device
 
     /**
      * This is the set method for Camera Megapixels value, that only takes in values between 0 and 1,000
-     *
      */
 
     public void setCameraMp(int cameraMp)
@@ -73,7 +69,6 @@ public class Phone extends Device
 
     /**
      * This is the get method for the Operating System.
-     *
      */
 
     public String getOperatingSystem()
@@ -83,7 +78,6 @@ public class Phone extends Device
 
     /**
      * This is the set method for the operating system. It only intakes strings between 2 to 25 characters long.
-     *
      */
 
     public void setOperatingSystem(String operatingSystem)
@@ -100,7 +94,6 @@ public class Phone extends Device
 
     /**
      * This is the get method for the amount of memory in a phone.
-     *
      */
 
     public int getMemoryGb()
@@ -110,7 +103,6 @@ public class Phone extends Device
 
     /**
      * This is the set method for the amount of memory in a phone. It only intakes values between 0 and 10,000.
-     *
      */
 
     public void setMemoryGb(int memoryGb)
@@ -123,7 +115,6 @@ public class Phone extends Device
 
     /**
      * This is the get method for the phone's colour.
-     *
      */
 
     public String getColour()
@@ -133,7 +124,6 @@ public class Phone extends Device
 
     /**
      * This is the get method for the phone's colour, which only intakes strings between 2 and 25 charactes long.
-     *
      */
 
     public void setColour(String colour)
@@ -146,5 +136,10 @@ public class Phone extends Device
         }
         else
             throw new IllegalArgumentException("The colour name's length must be between 2 and 50 characters.");
+    }
+
+    public String toString()
+    {
+        return (getManufacturer() + " " + getModel());
     }
 }

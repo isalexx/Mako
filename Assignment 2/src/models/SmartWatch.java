@@ -8,7 +8,6 @@ public class SmartWatch extends Device
 
     /**
      * This is the constructor for the SmartWatch object.
-     *
      */
 
     public SmartWatch(String manufacturer, String model, double price, int serialNum, boolean heartRateSens, int diameterMm, String finish)
@@ -21,7 +20,6 @@ public class SmartWatch extends Device
 
     /**
      * This is the get method that returns a boolean, saying if the watch has a heart rate sensor.
-     *
      */
 
     public boolean getHeartRateSens()
@@ -31,7 +29,6 @@ public class SmartWatch extends Device
 
     /**
      * This is the set method for the heart rate sensor that takes in boolean.
-     *
      */
 
     public void setHeartRateSens(boolean heartRateSens)
@@ -41,7 +38,6 @@ public class SmartWatch extends Device
 
     /**
      * This is the get method for the diameter of the watch in millimeters.
-     *
      */
 
     public int getDiameterMm()
@@ -51,7 +47,6 @@ public class SmartWatch extends Device
 
     /**
      * This is the set method for the diameter of the watch. It only takes in values between 0 and 100 mm.
-     *
      */
 
     public void setDiameterMm(int diameterMm)
@@ -64,7 +59,6 @@ public class SmartWatch extends Device
 
     /**
      * This is the get method that returns the name of the watch's finish.
-     *
      */
 
     public String getFinish()
@@ -74,7 +68,6 @@ public class SmartWatch extends Device
 
     /**
      * This is the set method for the finish that takes in strings between 2 and 25 characters long.
-     *
      */
 
     public void setFinish(String finish)
@@ -86,5 +79,10 @@ public class SmartWatch extends Device
         }
         else
             throw new IllegalArgumentException("The finish name must be between 2 and 50 characters long.");
+    }
+
+    public String toString()
+    {
+        return (getManufacturer() + " " + getModel());
     }
 }

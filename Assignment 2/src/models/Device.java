@@ -11,7 +11,6 @@ public class Device
 
     /**
      * This is the constructor for the Device class.
-     * @return
      */
 
     public Device(String manufacturer, String model, double price, int serialNum)
@@ -24,7 +23,6 @@ public class Device
 
     /**
      * This is the get method for Manufacturer.
-     *
      */
 
     public String getManufacturer()
@@ -34,7 +32,6 @@ public class Device
 
     /**
      * This is the set method for the manufacturer that only takes in strings length 2 to 30 characters. Also capitalizes the first letter.
-     *
      */
 
     public void setManufacturer(String manufacturer)
@@ -51,7 +48,6 @@ public class Device
 
     /**
      * This is the get method for Model.
-     *
      */
 
     public String getModel() {
@@ -60,7 +56,6 @@ public class Device
 
     /**
      * This is the set method for Model, that takes strings that are 2 to 30 characters in length. Also capitalizes the first letter.
-     *
      */
 
     public void setModel(String model)
@@ -77,7 +72,6 @@ public class Device
 
     /**
      * This is the get method for Price.
-     *
      */
 
     public double getPrice()
@@ -87,7 +81,6 @@ public class Device
 
     /**
      * This is the set method for price, where the price has to be between $0 and $100,000.
-     *
      */
 
     public void setPrice(double price)
@@ -100,8 +93,7 @@ public class Device
     }
 
     /**
-     * This is the get method for Seriam Number.
-     *
+     * This is the get method for Serial Number.
      */
 
     public int getSerialNum()
@@ -111,7 +103,6 @@ public class Device
 
     /**
      * This is the set method for the serial number, which has to be between 1,000,000 and 9,999,999.
-     *
      */
 
     public void setSerialNum(int serialNum)

@@ -1,0 +1,36 @@
+.root{
+    -fx-background-color: #1d1d1b;
+    -fx-text-fill: #99AAB5;
+}
+
+.vbox
+{
+    -fx-background-color: #2C2F33;
+    -fx-background-radius: 15px;
+    -fx-border-color: #fffffd;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
+
+.button
+{
+    -fx-background-color: #1d1d1b;
+    -fx-background-radius: 5px;
+    -fx-border-color: #fffffd;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+}
+
+.list-view
+{
+    -fx-font-size: 20px;
+}
+
+.creategrid
+{
+    -fx-background-color: #2C2F33;
+    -fx-background-radius: 15px;
+    -fx-border-color: #fffffd;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
