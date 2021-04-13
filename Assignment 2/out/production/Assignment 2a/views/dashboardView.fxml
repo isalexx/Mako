@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardViewController">
+<AnchorPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardViewController">
    <children>
       <VBox layoutX="6.0" layoutY="6.0" prefHeight="500.0" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -54,9 +54,9 @@
                                  <font>
                                     <Font size="18.0" />
                                  </font>
-                                 <padding>
+                                 <StackPane.margin>
                                     <Insets top="10.0" />
-                                 </padding>
+                                 </StackPane.margin>
                               </Label>
                            </children>
                         </StackPane>
@@ -68,21 +68,41 @@
                               <Insets left="10.0" right="10.0" />
                            </VBox.margin>
                         </ListView>
-                        <StackPane>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" onAction="#AddNewPhoneButton" prefHeight="42.0" prefWidth="155.0" text="Add Smart Phone" textFill="#fffffd">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                                 <StackPane.margin>
-                                    <Insets bottom="10.0" />
-                                 </StackPane.margin>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Button>
+                              <StackPane>
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#addNewPhoneButton" prefHeight="42.0" prefWidth="155.0" text="Add Smart Phone" textFill="#fffffd">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </StackPane>
+                              <StackPane GridPane.columnIndex="1">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#detailedPhoneViewButton" prefHeight="42.0" prefWidth="155.0" text="Phone Details" textFill="#fffffd">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </StackPane>
                            </children>
-                        </StackPane>
+                        </GridPane>
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" styleClass="vbox" GridPane.columnIndex="1">
@@ -104,21 +124,42 @@
                               <Insets left="10.0" right="10.0" />
                            </VBox.margin>
                         </ListView>
-                        <StackPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="155.0" text="Add Smart Watch" textFill="#fffffd">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                                 <StackPane.margin>
-                                    <Insets bottom="10.0" />
-                                 </StackPane.margin>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Button>
+                              <StackPane>
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#detailedSmartWatchViewButton" prefHeight="42.0" prefWidth="155.0" text="Watch Details" textFill="#fffffd">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </StackPane>
+                              <StackPane GridPane.columnIndex="1">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#addNewSmartWatchButton" prefHeight="42.0" prefWidth="155.0" text="Add Smart Watch" textFill="#fffffd">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </StackPane>
                            </children>
-                        </StackPane>
+                        </GridPane>
+                        <StackPane />
                      </children>
                   </VBox>
                </children>

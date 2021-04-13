@@ -1,9 +1,8 @@
 package utilities;
 
-import models.Phone;
+import models.SmartPhone;
 import models.SmartWatch;
 
-import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -14,10 +13,10 @@ public class DBUtility
     private static String password = "";
     private static String connectionString = "jdbc:mysql://localhost:3306/mako";
 
-    public static ArrayList<Phone> getPhonesFromDB() throws SQLException
+    public static ArrayList<SmartPhone> getPhonesFromDB() throws SQLException
     {
 
-        ArrayList<Phone> phones = new ArrayList<>();
+        ArrayList<SmartPhone> smartPhones = new ArrayList<>();
 
         try (
                 Connection conn = DriverManager.getConnection(connectionString, user, password);
@@ -27,7 +26,7 @@ public class DBUtility
         {
             while (resultSet.next())
             {
-                Phone newPhone = new Phone(resultSet.getString("manufacturer"),
+                SmartPhone newSmartPhone = new SmartPhone(resultSet.getString("manufacturer"),
                         resultSet.getString("model"),
                         resultSet.getInt("price"),
                         resultSet.getInt("serialNum"),
@@ -38,7 +37,7 @@ public class DBUtility
                         resultSet.getString("colour")
                         );
 
-                phones.add(newPhone);
+                smartPhones.add(newSmartPhone);
             }
         }
         catch (SQLException error)
@@ -46,7 +45,7 @@ public class DBUtility
             error.printStackTrace();
         }
 
-        return phones;
+        return smartPhones;
     }
 
     public static ArrayList<SmartWatch> getWatchesFromDB() throws SQLException
@@ -82,7 +81,7 @@ public class DBUtility
         return watches;
     }
 
-    public static String insertPhoneIntoDB(Phone newPhone) throws SQLException {
+    public static String insertPhoneIntoDB(SmartPhone newSmartPhone) throws SQLException {
         String message = "Failed!";
 
         try (
@@ -94,15 +93,51 @@ public class DBUtility
 
 
             //Bind the values to the datatype
-            statement.setString(1, newPhone.getManufacturer());
-            statement.setString(2, newPhone.getModel());
-            statement.setDouble(3, newPhone.getPrice());
-            statement.setInt(4, newPhone.getSerialNum());
-            statement.setDouble(5, newPhone.getScreenSizeInch());
-            statement.setInt(6, newPhone.getCameraMp());
-            statement.setString(7, newPhone.getOperatingSystem());
-            statement.setInt(8, newPhone.getMemoryGb());
-            statement.setString(9, newPhone.getColour());
+            statement.setString(1, newSmartPhone.getManufacturer());
+            statement.setString(2, newSmartPhone.getModel());
+            statement.setDouble(3, newSmartPhone.getPrice());
+            statement.setInt(4, newSmartPhone.getSerialNum());
+            statement.setDouble(5, newSmartPhone.getScreenSizeInch());
+            statement.setInt(6, newSmartPhone.getCameraMp());
+            statement.setString(7, newSmartPhone.getOperatingSystem());
+            statement.setInt(8, newSmartPhone.getMemoryGb());
+            statement.setString(9, newSmartPhone.getColour());
+
+            //Execute the insert statement.
+            statement.executeUpdate();
+
+            message = "Success!";
+        }
+
+        catch (Exception error)
+        {
+            error.printStackTrace();
+        }
+        finally
+        {
+            return message;
+        }
+    }
+
+    public static String insertSmartWatchIntoDB(SmartWatch newSmartWatch) throws SQLException {
+        String message = "Failed!";
+
+        try (
+                Connection conn = DriverManager.getConnection(connectionString, user, password);
+                PreparedStatement statement = conn.prepareStatement("INSERT INTO smartWatches (manufacturer, model, price, serialNum, heartRateSens, diameterMm, finish) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?);");
+        )
+        {
+
+
+            //Bind the values to the datatype
+            statement.setString(1, newSmartWatch.getManufacturer());
+            statement.setString(2, newSmartWatch.getModel());
+            statement.setDouble(3, newSmartWatch.getPrice());
+            statement.setInt(4, newSmartWatch.getSerialNum());
+            statement.setBoolean(5, newSmartWatch.getHeartRateSens());
+            statement.setInt(6, newSmartWatch.getDiameterMm());
+            statement.setString(7, newSmartWatch.getFinish());
 
             //Execute the insert statement.
             statement.executeUpdate();
