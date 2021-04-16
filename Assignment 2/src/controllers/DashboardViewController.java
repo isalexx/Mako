@@ -48,18 +48,27 @@ public class DashboardViewController implements Initializable {
         smartWatchesLabel.setText("Smart Watches: " + smartWatchListView.getItems().size());
     }
 
+    /**
+     * This is the button to switch to the scene where you can add a new phone.
+     */
     @FXML
     private void addNewPhoneButton(ActionEvent event) throws IOException
     {
         SceneSwitcher.changeScenes(event, "views/createSmartPhoneView.fxml", "Mako - Add a New Smart Phone");
     }
 
+    /**
+     * This is the button to switch to the scene where you can add a new watch.
+     */
     @FXML
     private void addNewSmartWatchButton(ActionEvent event) throws IOException
     {
         SceneSwitcher.changeScenes(event, "views/createSmartWatchView.fxml", "Mako - Add a New Smart Watch");
     }
 
+    /**
+     * This is the button to switch to the scene where you can view the details of a selected phone.
+     */
     @FXML
     private void detailedPhoneViewButton(ActionEvent event) throws IOException
     {
@@ -79,6 +88,9 @@ public class DashboardViewController implements Initializable {
         stage.show();
     }
 
+    /**
+     * This is the button to switch to the scene where you can view the details of a selected watch.
+     */
     @FXML
     private void detailedSmartWatchViewButton(ActionEvent event) throws IOException
     {
@@ -97,6 +109,4 @@ public class DashboardViewController implements Initializable {
         stage.setTitle("Mako - Smart Watch Details");
         stage.show();
     }
-
-
 }

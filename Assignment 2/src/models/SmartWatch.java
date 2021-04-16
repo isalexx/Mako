@@ -80,9 +80,4 @@ public class SmartWatch extends Device
         else
             throw new IllegalArgumentException("The finish name must be between 2 and 50 characters long.");
     }
-
-    public String toString()
-    {
-        return (getManufacturer() + " " + getModel());
-    }
 }

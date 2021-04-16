@@ -39,12 +39,18 @@ public class DetailedSmartPhoneViewController {
     @FXML
     private TextField colourTextField;
 
+    /**
+     * This is the button to go to the homepage.
+     */
     @FXML
     public void homePage(ActionEvent event) throws IOException
     {
         SceneSwitcher.changeScenes(event, "views/dashboardView.fxml", "Mako - Home Page");
     }
 
+    /**
+     * This is the method to transfer the phone data from the list to DetailedSmartPhone view.
+     */
     public void transferPhoneData(SmartPhone selectedSmartPhone)
     {
         //This is something that will help us round the values.

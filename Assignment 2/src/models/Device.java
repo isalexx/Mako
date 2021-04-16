@@ -112,4 +112,12 @@ public class Device
         else
             throw new IllegalArgumentException("Serial number must be between 1,000,000 and 9,999,999");
     }
+
+    /**
+     * This is the to string method that shows the manufacturer and model of the device.
+     */
+    public String toString()
+    {
+        return (getManufacturer() + " " + getModel());
+    }
 }

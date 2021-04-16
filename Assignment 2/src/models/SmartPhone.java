@@ -136,9 +136,4 @@ public class SmartPhone extends Device
         else
             throw new IllegalArgumentException("The colour name's length must be between 2 and 50 characters.");
     }
-
-    public String toString()
-    {
-        return (getManufacturer() + " " + getModel());
-    }
 }

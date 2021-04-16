@@ -20,7 +20,7 @@ CREATE TABLE smartPhones(
 
 
 INSERT INTO smartPhones (manufacturer, model, price, serialNum, screenSizeInch, cameraMp, operatingSystem, memoryGb, colour) VALUES ('Samsung', 'Galaxy S21', 1400.00, 2733318, 6.2, 88, 'Android 11', 256, 'Prism Black');
-INSERT INTO smartPhones (manufacturer, model, price, serialNum, screenSizeInch, cameraMp, operatingSystem, memoryGb, colour) VALUES ('Iphone', '11', 875.00, 6980091, 6.1, 36, 'IOS 13', 128, 'Rose Gold');
+INSERT INTO smartPhones (manufacturer, model, price, serialNum, screenSizeInch, cameraMp, operatingSystem, memoryGb, colour) VALUES ('Apple', 'Iphone 11', 875.00, 6980091, 6.1, 36, 'IOS 13', 128, 'Rose Gold');
 INSERT INTO smartPhones (manufacturer, model, price, serialNum, screenSizeInch, cameraMp, operatingSystem, memoryGb, colour) VALUES ('LG', 'Velvet', 750.00, 8535505, 6.8, 61, 'Android 10', 128, 'Sunset');
 INSERT INTO smartPhones (manufacturer, model, price, serialNum, screenSizeInch, cameraMp, operatingSystem, memoryGb, colour) VALUES ('Google', 'Pixel 5', 940.00, 4054700, 6.0, 28, 'Android 11', 128, 'Sorta Sage');
 INSERT INTO smartPhones (manufacturer, model, price, serialNum, screenSizeInch, cameraMp, operatingSystem, memoryGb, colour) VALUES ('Huawei', 'P30', 949.99, 3314022, 6.1, 64, 'Android 9', 128, 'Breathing Crystal');

@@ -12,6 +12,9 @@ import java.io.IOException;
 
 public class SceneSwitcher
 {
+    /**
+     * This is a method that allows us to switch scenes easily.
+     */
     public static void changeScenes(ActionEvent event, String pathToFXML, String windowTitle) throws IOException
     {
         Parent root = FXMLLoader.load(SceneSwitcher.class.getClassLoader().getResource(pathToFXML));

@@ -13,17 +13,22 @@ public class DBUtility
     private static String password = "";
     private static String connectionString = "jdbc:mysql://localhost:3306/mako";
 
+    /**
+     * This is a method to get all the phones from the database.
+     */
     public static ArrayList<SmartPhone> getPhonesFromDB() throws SQLException
     {
-
+        //Starting new array of smart phones.
         ArrayList<SmartPhone> smartPhones = new ArrayList<>();
 
         try (
+                //Starting the connection.
                 Connection conn = DriverManager.getConnection(connectionString, user, password);
                 Statement statement = conn.createStatement();
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM smartphones;");
         )
         {
+            //For each result in the query, we add the data to the array of Smart Phones.
             while (resultSet.next())
             {
                 SmartPhone newSmartPhone = new SmartPhone(resultSet.getString("manufacturer"),
@@ -48,17 +53,22 @@ public class DBUtility
         return smartPhones;
     }
 
+    /**
+     * This is a method to get all the watches from the database.
+     */
     public static ArrayList<SmartWatch> getWatchesFromDB() throws SQLException
     {
-
+        //Starting a new array of Smart Watches.
         ArrayList<SmartWatch> watches = new ArrayList<>();
 
         try (
+                //Starting the connection.
                 Connection conn = DriverManager.getConnection(connectionString, user, password);
                 Statement statement = conn.createStatement();
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM smartwatches;");
         )
         {
+            //For each result in the query we add the data to the array list that stores all the watches.
             while (resultSet.next())
             {
                 SmartWatch newWatch = new SmartWatch(resultSet.getString("manufacturer"),
@@ -81,10 +91,15 @@ public class DBUtility
         return watches;
     }
 
+    /**
+     * This is a method to insert a phone into the database.
+     */
     public static String insertPhoneIntoDB(SmartPhone newSmartPhone) throws SQLException {
+        //Default message.
         String message = "Failed!";
 
         try (
+                //Starting the connecton.
                 Connection conn = DriverManager.getConnection(connectionString, user, password);
                 PreparedStatement statement = conn.prepareStatement("INSERT INTO smartPhones (manufacturer, model, price, serialNum, screenSizeInch, cameraMp, operatingSystem, memoryGb, colour) " +
                         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);");
@@ -106,6 +121,7 @@ public class DBUtility
             //Execute the insert statement.
             statement.executeUpdate();
 
+            //If everything went well, change the message to success.
             message = "Success!";
         }
 
@@ -119,10 +135,15 @@ public class DBUtility
         }
     }
 
+    /**
+     * This is a method to insert a watch into the database.
+     */
     public static String insertSmartWatchIntoDB(SmartWatch newSmartWatch) throws SQLException {
+        //Default message.
         String message = "Failed!";
 
         try (
+                //Starting the connection.
                 Connection conn = DriverManager.getConnection(connectionString, user, password);
                 PreparedStatement statement = conn.prepareStatement("INSERT INTO smartWatches (manufacturer, model, price, serialNum, heartRateSens, diameterMm, finish) " +
                         "VALUES (?, ?, ?, ?, ?, ?, ?);");
@@ -142,6 +163,7 @@ public class DBUtility
             //Execute the insert statement.
             statement.executeUpdate();
 
+            //Give the positive message if everythign went well.
             message = "Success!";
         }
 

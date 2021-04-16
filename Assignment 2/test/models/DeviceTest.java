@@ -146,4 +146,15 @@ class DeviceTest {
         assertThrows(IllegalArgumentException.class, ()->
                 device.setSerialNum(123));
     }
+
+    /**
+     * This tests the to string method.
+     */
+    @Test
+    void toStringTest()
+    {
+        device.setManufacturer("Apple");
+        device.setModel("Iphone 7");
+        assertEquals("Apple Iphone 7", device.toString());
+    }
 }

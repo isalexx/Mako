@@ -43,6 +43,9 @@ public class CreateSmartPhoneViewController {
     @FXML
     private Label successMessage;
 
+    /**
+     * This is the button to add a new phone into the database using the data from the text fields.
+     */
     @FXML
     public void addPhone() {
 
@@ -50,6 +53,7 @@ public class CreateSmartPhoneViewController {
         {
             try
             {
+                //Creating a new smart phone object using the text fields values.
                 SmartPhone newSmartPhone = new SmartPhone(manufacturerTextField.getText(),
                         modelTextField.getText(),
                         Double.parseDouble(priceTextField.getText()),
@@ -60,6 +64,7 @@ public class CreateSmartPhoneViewController {
                         Integer.parseInt(memoryTextField.getText()),
                         colourTextField.getText());
 
+                //This is the method to insert the phone into the database, and it also returns a success message (or failure)
                 successMessage.setText(DBUtility.insertPhoneIntoDB(newSmartPhone));
             }
             catch (Exception error)
@@ -74,10 +79,16 @@ public class CreateSmartPhoneViewController {
         }
     }
 
+    /**
+     * This is the button to go to the homepage.
+     */
     public void homePage(ActionEvent event) throws IOException {
         SceneSwitcher.changeScenes(event, "views/dashboardView.fxml", "Mako - Home Page");
     }
 
+    /**
+     * This is a method to check the fields were populated. If they arent, tells the user the insertion failed.
+     */
     private boolean fieldsArePopulated()
     {
         boolean ok = true;
